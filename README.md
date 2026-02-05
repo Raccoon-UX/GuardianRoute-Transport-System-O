@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 # GuardianRoute-Transport-System
@@ -121,3 +122,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 =======
 **Built with ❤️ for WebSprint Hackathon 2026**
 >>>>>>> cd72c95 (Updated README.md)
+=======
+# GuardianRoute-Transport-System-O
+Real-time school bus tracking system built with Node.js, Socket.io &amp; Leaflet. Ensures student safety via zero-latency GPS monitoring. Features include AI route optimization, geofencing, instant driver SOS alerts, automated attendance, and a comprehensive fleet management dashboard.
+>>>>>>> fdcf4c073f6642ab3fd79d318f6b4afef761fb72
