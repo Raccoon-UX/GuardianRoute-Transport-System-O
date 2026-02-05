@@ -1,17 +1,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
-# GuardianRoute-Transport-System
-Real-time school bus tracking system built with Node.js, Socket.io, and Leaflet Maps. Features live geolocation, geofencing, driver SOS alerts, and fleet management analytics.
 =======
->>>>>>> cd72c95 (Updated README.md)
 
-# 🚍 GuardianRoute
+>>>>>>> c5c206bc677b7fdc6c4353d2840e90d23a8d1c67
+# GuardianRoute-Transport-System
+### Real-time school bus tracking system built with Node.js, Socket.io, and Leaflet Maps. Features live geolocation, geofencing, driver SOS alerts, and fleet management analytics
 
+# 🚍 GuardianRoute 
 **GuardianRoute: Smart School Transport & Safety System**
 
 GuardianRoute is an AI-powered school bus tracking solution designed to ensure student safety and transport efficiency. It features live GPS monitoring, smart route optimization, automated attendance tracking, and an emergency SOS system for drivers.
+
+##       Frontend: Live On --> [Vercel](https://guardian-route-transport-system-n.vercel.app/)  &  [GitHub](https://raccoon-ux.github.io/GuardianRoute-Transport-System-N/)
+##       Backend--> [Live](https://guardianroute-transport-system-n.onrender.com)
 
 ## 🚀 Features
 
@@ -25,17 +29,17 @@ GuardianRoute is an AI-powered school bus tracking solution designed to ensure s
 
 - **Frontend:** HTML5, CSS3 (Custom Responsive), JavaScript (Vanilla)
 - **Maps & Visualization:** Leaflet.js, OpenStreetMap, Chart.js
-<<<<<<< HEAD
 - **Backend:** Node.js, Express.js
 =======
 - **Backend:** Node.js, Express.jsgit push -u origin main --force
-
->>>>>>> cd72c95 (Updated README.md)
 - **Real-time Communication:** Socket.io
 
 ## 📂 Project Structure
 
 ```bash
+
+INITIALLY...........
+
 GuardianRoute/
 │
 ├── backend/                # Backend Server Code
@@ -54,6 +58,33 @@ GuardianRoute/
 │
 └── README.md               # Project Documentation
 
+
+
+
+MODIFIED STR............
+
+GuardianRoute/
+│
+├── backend/                  # ⚙️ Backend Server Code
+│   ├── models/               # Database Schemas
+│   ├── node_modules/         # Dependencies
+│   ├── .env                  # Environment Variables
+│   ├── package.json          # Backend Settings
+│   └── server.js             # Main Server File
+│
+├── images/                   # 🖼️ Images & Logos
+│   ├── imglogo.png
+│   └── imglogoNoText.png
+│
+├── index.html                # 🏠 Landing & Login Page
+├── admin-panel.html          # 📊 Main Admin Dashboard
+├── driver.html               # 🚌 Driver App Interface
+├── parent.html               # 👨‍👩‍👦 Parent Tracking Interface
+├── style.css                 # 🎨 Global Stylesheet
+├── students.json             # 📂 Student Data File
+├── package.json              # Root Dependencies
+└── README.md                 # 📄 Project Documentation
+
 ```
 
 ## ⚙️ Installation & Local Setup
@@ -67,7 +98,7 @@ Follow these steps to run the project locally on your machine.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone [https://github.com/your-username/GuardianRoute.git](https://github.com/your-username/GuardianRoute.git)
+git clone [https://github.com/Raccoon-UX/GuardianRoute-Transport-System-N.git](https://github.com/Raccoon-UX/GuardianRoute-Transport-System-N.git)
 cd GuardianRoute
 
 ```
@@ -118,6 +149,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 ---
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Built with ❤️ for WebSprint Hackathon 2026**
 =======
 **Built with ❤️ for WebSprint Hackathon 2026**
@@ -126,3 +158,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 # GuardianRoute-Transport-System-O
 Real-time school bus tracking system built with Node.js, Socket.io &amp; Leaflet. Ensures student safety via zero-latency GPS monitoring. Features include AI route optimization, geofencing, instant driver SOS alerts, automated attendance, and a comprehensive fleet management dashboard.
 >>>>>>> fdcf4c073f6642ab3fd79d318f6b4afef761fb72
+=======
+**Built with ❤️ for IDEA LAB As a Major Project 2026**
+
+>>>>>>> c5c206bc677b7fdc6c4353d2840e90d23a8d1c67
