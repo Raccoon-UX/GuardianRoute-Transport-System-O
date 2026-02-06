@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> c5c206bc677b7fdc6c4353d2840e90d23a8d1c67
 # GuardianRoute-Transport-System
 ### Real-time school bus tracking system built with Node.js, Socket.io, and Leaflet Maps. Features live geolocation, geofencing, driver SOS alerts, and fleet management analytics
 
@@ -14,7 +7,7 @@
 
 GuardianRoute is an AI-powered school bus tracking solution designed to ensure student safety and transport efficiency. It features live GPS monitoring, smart route optimization, automated attendance tracking, and an emergency SOS system for drivers.
 
-##       Frontend: Live On --> [Vercel](https://guardian-route-transport-system-n.vercel.app/)  &  [GitHub](https://raccoon-ux.github.io/GuardianRoute-Transport-System-N/)
+##       Frontend: Live On --> [Vercel](https://guardian-route-transport-system-n.vercel.app/)  &  [GitHub](https://raccoon-ux.github.io/GuardianRoute-Transport-System-O/)
 ##       Backend--> [Live](https://guardianroute-transport-system-n.onrender.com)
 
 ## 🚀 Features
@@ -148,17 +141,5 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-**Built with ❤️ for WebSprint Hackathon 2026**
-=======
-**Built with ❤️ for WebSprint Hackathon 2026**
->>>>>>> cd72c95 (Updated README.md)
-=======
-# GuardianRoute-Transport-System-O
-Real-time school bus tracking system built with Node.js, Socket.io &amp; Leaflet. Ensures student safety via zero-latency GPS monitoring. Features include AI route optimization, geofencing, instant driver SOS alerts, automated attendance, and a comprehensive fleet management dashboard.
->>>>>>> fdcf4c073f6642ab3fd79d318f6b4afef761fb72
-=======
 **Built with ❤️ for IDEA LAB As a Major Project 2026**
 
->>>>>>> c5c206bc677b7fdc6c4353d2840e90d23a8d1c67
