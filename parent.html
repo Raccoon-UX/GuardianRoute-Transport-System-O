@@ -18,11 +18,16 @@
 
         /* --- LOGIN SCREEN --- */
         #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); display: flex; align-items: center; justify-content: center; z-index: 1000; }
-        .login-card { background: white; padding: 40px; border-radius: 24px; width: 90%; max-width: 350px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .login-card { background: white; padding: 40px; border-radius: 24px; width: 90%; max-width: 380px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: all 0.3s; }
         
         .input-group { margin-bottom: 20px; text-align: left; }
         .input-group label { font-size: 0.9rem; color: #64748b; margin-bottom: 5px; display: block; font-weight: 500; }
         
+        /* NEW: Phone Input Container */
+        .phone-container { display: flex; gap: 8px; }
+        .country-code { flex: 0 0 100px; cursor: pointer; }
+        #mobileInput { flex: 1; }
+
         input, select { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 12px; box-sizing: border-box; font-family: inherit; font-size: 1rem; background: #fff; }
         input:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
 
@@ -64,7 +69,17 @@
                 <p style="color: #64748b; margin-bottom: 20px;">Enter your registered mobile number.</p>
                 <div class="input-group">
                     <label>Mobile Number</label>
-                    <input type="tel" id="mobileInput" placeholder="e.g. 7710893839">
+                    <div class="phone-container">
+                        <select id="countryCode" class="country-code">
+                            <option value="+91" selected>🇮🇳 +91</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+971">🇦🇪 +971</option>
+                            <option value="+61">🇦🇺 +61</option>
+                            <option value="+81">🇯🇵 +81</option>
+                        </select>
+                        <input type="tel" id="mobileInput" placeholder="e.g. 7710893839">
+                    </div>
                 </div>
                 <button class="btn" onclick="verifyPhone()">Get Details</button>
                 <p style="margin-top: 15px; font-size: 0.8rem; color: #94a3b8;">Try: 9022767450</p>
@@ -126,40 +141,29 @@
     <script>
         const socket = io('http://localhost:5000'); 
         let map, busMarker;
+        let schoolData = {}; 
 
-        // --- 📊 DYNAMIC DATA LOADING (External File) ---
-        let schoolData = {}; // Data ab empty hai, file se aayega
-
-        // Page load hote hi data fetch karein
         async function loadStudentData() {
             try {
-                // 'students.json' file ko padhein
                 const response = await fetch('students.json');
-                
-                // Agar file nahi mili toh error throw karein
                 if (!response.ok) {
                     throw new Error("HTTP error " + response.status);
                 }
-                
-                // JSON data ko variable mein save karein
                 schoolData = await response.json();
                 console.log("✅ Student Database Loaded");
             } catch (error) {
                 console.error("❌ Error loading student data:", error);
-                alert("Database Error: Make sure 'students.json' file is in the frontend folder!");
+                alert("Database Error: Make sure 'students.json' is present!");
             }
         }
         
-        // Function run karein
         loadStudentData();
 
         let selectedStudent = null;
 
-        // --- LOGIC: Step 1 (Verify Phone) ---
         function verifyPhone() {
             const mobile = document.getElementById('mobileInput').value;
             
-            // Check karein ki data load hua ya nahi
             if (Object.keys(schoolData).length === 0) {
                 alert("⏳ Please wait, Database is loading...");
                 return;
@@ -185,7 +189,6 @@
             }
         }
 
-        // --- LOGIC: Auto Select Bus ---
         function autoSelectBus() {
             const mobile = document.getElementById('mobileInput').value;
             const studentIndex = document.getElementById('studentSelect').value;
@@ -207,7 +210,6 @@
             document.getElementById('step1').classList.remove('hidden');
         }
 
-        // --- LOGIC: Step 2 (Final Login) ---
         function completeLogin() {
             if (!selectedStudent) return;
 
@@ -229,7 +231,6 @@
             if(confirm("Log out?")) location.reload();
         }
 
-        // --- MAP LOGIC ---
         function initMap(targetBusId) {
             map = L.map('map').setView([19.0760, 72.8777], 14);
             L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
