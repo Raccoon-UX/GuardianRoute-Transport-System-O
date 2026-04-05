@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GuardianRoute</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --primary: #4f46e5; 
+            --dark: #0f172a; 
+            --light: #f8fafc; 
+            --accent: #ec4899;
+        }
+        
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            margin: 0; 
+            background-color: var(--light); 
+            color: var(--dark); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND ANIMATION --- */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%);
+            z-index: -1;
+        }
+        
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 8%; 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+
+        .hero-section { text-align: center; margin-bottom: 80px; }
+        h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 10px; 
+            color: var(--dark);
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .underline { width: 100px; height: 6px; background: var(--primary); margin: 0 auto; border-radius: 10px; }
+
+        .mission-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 60px; 
+            margin-top: 60px; 
+            align-items: center; 
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+        .mission-text h2 { color: var(--primary); font-size: 2.2rem; margin-bottom: 20px; }
+        .mission-img img { 
+            width: 100%; 
+            border-radius: 24px; 
+            transition: transform 0.5s ease;
+        }
+        .mission-img:hover img { transform: scale(1.02) rotate(1deg); }
+
+        .team-section { margin-top: 100px; text-align: center; }
+        .team-grid { 
+            display: flex; 
+            justify-content: center; 
+            gap: 40px; 
+            flex-wrap: wrap; 
+            margin-top: 50px; 
+        }
+
+        /* --- TEAM CARD MODIFICATIONS --- */
+        .team-card { 
+            background: white; 
+            padding: 50px 40px; 
+            border-radius: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            max-width: 380px;
+            flex: 1;
+            min-width: 320px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .team-card:hover { 
+            transform: translateY(-15px); 
+            box-shadow: 0 25px 50px rgba(79, 70, 229, 0.15); 
+            border-color: var(--primary);
+        }
+
+        /* PHOTO STYLE */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 5px solid #eef2ff;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .team-card:hover .profile-img {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .team-card h3 { margin: 10px 0 5px; font-size: 1.8rem; color: var(--dark); font-weight: 700; }
+        
+        .team-card .role { 
+            color: var(--primary); 
+            font-weight: 800; 
+            margin-bottom: 20px; 
+            display: inline-flex; 
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            font-size: 0.85rem; 
+            background: #eef2ff;
+            padding: 8px 18px;
+            border-radius: 20px;
+        }
+
+        .team-card .desc { color: #64748b; font-size: 1rem; line-height: 1.7; }
+
+        footer { 
+            text-align: center; 
+            padding: 60px 40px; 
+            background: white; 
+            border-top: 1px solid #e2e8f0; 
+            margin-top: 100px; 
+        }
+
+        .btn-back { 
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px; 
+            padding: 16px 35px; 
+            background: var(--dark); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            transition: 0.3s; 
+        }
+        .btn-back:hover { background: var(--primary); transform: translateX(-8px); }
+
+        @media (max-width: 768px) {
+            .mission-grid { grid-template-columns: 1fr; text-align: center; padding: 25px; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="images/imglogo.png" alt="Logo" style="height: 45px;"> 
+            <span>GuardianRoute</span>
+        </a>
+    </nav>
+
+    <div class="container">
+        <section class="hero-section">
+            <h1>Our Vision & Mission</h1>
+            <div class="underline"></div>
+            <p style="font-size: 1.3rem; color: #64748b; margin-top: 25px; font-weight: 400;">Making every school journey safe, smart, and sustainable for Mira Bhayandar.</p>
+        </section>
+
+        <section class="mission-grid">
+            <div class="mission-text">
+                <h2>The Problem We Solve</h2>
+                <p>Many school transportation systems in Mira Bhayandar operate without real-time tracking, leaving parents anxious and routes inefficient. This leads to higher fuel consumption and traffic congestion near our schools.</p>
+                <p><b>GuardianRoute</b> bridges this gap with an intelligent tracking solution that ensures student safety and provides total peace of mind without requiring expensive hardware.</p>
+            </div>
+            <div class="mission-img">
+                <img src="https://img.freepik.com/free-vector/connected-world-concept-illustration_114360-3027.jpg" alt="GuardianRoute Mission">
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>The Minds Behind GuardianRoute</h2>
+            <div class="underline" style="background: var(--accent);"></div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/Sujal Img.jpeg" alt="Sujal K. Verma" class="profile-img">
+                    <h3>Sujal K. Verma</h3>
+                    <span class="role"><i class="fas fa-paint-brush"></i> Lead UI/UX & Frontend</span>
+                    <p class="desc">Expert in crafting seamless user journeys. Sujal focuses on safety, transparency, and the Parent Experience through intuitive dashboard designs.</p>
+                </div>
+                
+                <div class="team-card">
+                    <img src="images/Aryan.png" alt="Aryan G. Ubale" class="profile-img">
+                    <h3>Aryan G. Ubale</h3>
+                    <span class="role"><i class="fas fa-terminal"></i> Operations & Core Logic</span>
+                    <p class="desc">The logic engine of the system. Aryan is responsible for Admin/Driver modules, real-time location sharing, and system operational efficiency.</p>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Back to Homepage
+            </a>
+        </section>
+    </div>
+
+    <footer>
+        <p style="font-weight: 600; color: var(--dark);">GuardianRoute Project 2026</p>
+        <p style="font-size: 0.9rem;">Shree L. R. Tiwari College of Engineering (SE-IT)</p>
+    </footer>
+
+</body>
+</html>
